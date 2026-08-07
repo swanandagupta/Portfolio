@@ -3,7 +3,7 @@ import SectionHeader from "./SectionHeader";
 import SignalDivider from "./SignalDivider";
 import SubtleWaves from "./SubtleWaves";
 import { DOMAIN, EXPERIENCE } from "../data/content";
-import { Briefcase, Calendar, Building2, CheckCircle, Filter } from "lucide-react";
+import { Briefcase, Calendar, Building2, CheckCircle, Filter, FileText, ExternalLink } from "lucide-react";
 
 export default function Experience({ audioSynth }) {
   const timelineRef = useRef(null);
@@ -138,18 +138,36 @@ export default function Experience({ audioSynth }) {
                       ))}
                     </ul>
 
-                    {/* Tech Badges */}
-                    <div className="flex flex-wrap gap-2 pt-2 border-t border-line/60">
-                      {role.tags.map((tag) => (
-                        <span
-                          key={tag}
+                    {/* Tech Badges & Certificate Link (Bottom Right Corner) */}
+                    <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-line/60">
+                      <div className="flex flex-wrap gap-2">
+                        {role.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            onMouseEnter={() => audioSynth?.playHover && audioSynth.playHover()}
+                            className="font-mono text-[11px] uppercase tracking-wide px-3 py-1 rounded-full border bg-panel2/40 hover:bg-panel2 transition-colors cursor-default select-none"
+                            style={{ borderColor: d.color + "40", color: d.color }}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Bottom Right Certificate PDF Link Button */}
+                      {role.certificate && (
+                        <a
+                          href={role.certificate}
+                          target="_blank"
+                          rel="noreferrer"
                           onMouseEnter={() => audioSynth?.playHover && audioSynth.playHover()}
-                          className="font-mono text-[11px] uppercase tracking-wide px-3 py-1 rounded-full border bg-panel2/40 hover:bg-panel2 transition-colors cursor-default select-none"
-                          style={{ borderColor: d.color + "40", color: d.color }}
+                          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-cyan/40 bg-cyan/10 hover:bg-cyan text-cyan hover:text-panel font-mono text-xs font-semibold tracking-wide transition-all duration-200 shadow-[0_0_12px_rgba(94,234,212,0.25)] hover:shadow-[0_0_18px_rgba(94,234,212,0.5)] shrink-0 ml-auto"
+                          title="View Verification Certificate PDF"
                         >
-                          {tag}
-                        </span>
-                      ))}
+                          <FileText className="h-3.5 w-3.5" />
+                          <span>View Certificate</span>
+                          <ExternalLink className="h-3 w-3" />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </li>

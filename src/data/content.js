@@ -46,6 +46,7 @@ export const EXPERIENCE = [
       "Compared classical manifold learning against quantum-enhanced classification to improve the robustness of EEG biometric authentication.",
     ],
     tags: ["EEG Biometrics", "Riemannian Geometry", "Variational Quantum Classifier", "Cognitive Fingerprinting"],
+    certificate: null,
   },
   {
     domain: "security",
@@ -60,6 +61,7 @@ export const EXPERIENCE = [
       "Supported CERT incident response and threat investigation workflows.",
     ],
     tags: ["IBM QRadar", "SIEM", "MITRE ATT&CK", "Incident Response"],
+    certificate: "certificate/Maharashtra Cyber.pdf",
   },
   {
     domain: "software",
@@ -74,6 +76,7 @@ export const EXPERIENCE = [
       "Built real-time analytics dashboards to track learner progress.",
     ],
     tags: ["React", "Tailwind CSS", "Adaptive Systems", "Analytics"],
+    certificate: "certificate/CSIR.pdf",
   },
   {
     domain: "software",
@@ -88,6 +91,7 @@ export const EXPERIENCE = [
       "Optimized performance with Entity Framework and SQL Server, and added client-side storage with IndexedDB.",
     ],
     tags: ["ASP.NET Core", "Onion Architecture", "Entity Framework", "SQL Server"],
+    certificate: "certificate/L&T.pdf",
   },
 ];
 
