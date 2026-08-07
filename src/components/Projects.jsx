@@ -75,7 +75,7 @@ export default function Projects({ audioSynth }) {
     if (!container) return;
 
     const isAtLeft = container.scrollLeft <= 0;
-    const isAtRight = container.scrollLeft >= container.scrollWidth - container.clientWidth - 2;
+    const isAtRight = container.scrollLeft >= container.scrollWidth - container.clientWidth - 4;
 
     if ((e.deltaY > 0 && !isAtRight) || (e.deltaY < 0 && !isAtLeft)) {
       e.preventDefault();
@@ -103,9 +103,13 @@ export default function Projects({ audioSynth }) {
 
   const handleMouseUpOrLeave = () => setIsDragging(false);
 
-  const scrollByAmount = (amount) => {
+  const scrollByAmount = (direction) => {
     if (!scrollContainerRef.current) return;
-    scrollContainerRef.current.scrollBy({ left: amount, behavior: "smooth" });
+    const container = scrollContainerRef.current;
+    const scrollDelta = container.clientWidth * 0.75;
+    const targetScroll = direction === "right" ? scrollDelta : -scrollDelta;
+
+    container.scrollBy({ left: targetScroll, behavior: "smooth" });
     if (audioSynth?.playClick) audioSynth.playClick();
   };
 
@@ -155,14 +159,14 @@ export default function Projects({ audioSynth }) {
         {/* Scroll Control Arrows */}
         <div className="flex items-center gap-2 shrink-0">
           <button
-            onClick={() => scrollByAmount(-360)}
+            onClick={() => scrollByAmount("left")}
             className="p-2.5 rounded-full bg-panel2 border border-line text-muted hover:text-cyan hover:border-cyan/50 transition-all shadow-sm active:scale-90"
             title="Scroll Left"
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
           <button
-            onClick={() => scrollByAmount(360)}
+            onClick={() => scrollByAmount("right")}
             className="p-2.5 rounded-full bg-panel2 border border-line text-muted hover:text-cyan hover:border-cyan/50 transition-all shadow-sm active:scale-90"
             title="Scroll Right"
           >
@@ -171,8 +175,8 @@ export default function Projects({ audioSynth }) {
         </div>
       </div>
 
-      {/* Compact Full-Width Immersive Horizontal Carousel Region */}
-      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 relative group">
+      {/* Full-Width Fluid Responsive Horizontal Carousel Region */}
+      <div className="w-full max-w-[1400px] mx-auto relative group">
         <div
           ref={scrollContainerRef}
           onWheel={handleWheel}
@@ -180,7 +184,7 @@ export default function Projects({ audioSynth }) {
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUpOrLeave}
           onMouseLeave={handleMouseUpOrLeave}
-          className="flex gap-6 overflow-x-auto overflow-y-hidden py-4 px-1 scrollbar-none snap-x snap-mandatory cursor-grab active:cursor-grabbing select-none w-full"
+          className="flex gap-4 sm:gap-6 overflow-x-auto overflow-y-hidden py-4 px-4 sm:px-8 lg:px-12 scrollbar-none snap-x snap-mandatory cursor-grab active:cursor-grabbing select-none w-full scroll-px-4 sm:scroll-px-8 lg:scroll-px-12"
         >
           {PROJECTS.map((p) => {
             const d = DOMAIN[p.domain] || { color: "#A78BFA" };
@@ -195,7 +199,7 @@ export default function Projects({ audioSynth }) {
                   borderTopColor: d.color,
                   borderTopWidth: 3,
                 }}
-                className="snap-start group/card block w-[320px] sm:w-[350px] bg-panel/85 backdrop-blur-xl border border-line/80 rounded-2xl p-6 transition-all duration-300 hover:border-cyan/60 hover:shadow-[0_12px_30px_rgba(94,234,212,0.15)] hover:-translate-y-1 select-none cursor-pointer shrink-0 relative flex flex-col justify-between"
+                className="snap-start group/card block w-[82vw] sm:w-[calc(50vw-2.5rem)] lg:w-[calc(33.333vw-2.5rem)] xl:w-[calc(25vw-2.5rem)] min-w-[270px] max-w-[370px] shrink-0 bg-panel/85 backdrop-blur-xl border border-line/80 rounded-2xl p-6 transition-all duration-300 hover:border-cyan/60 hover:shadow-[0_12px_30px_rgba(94,234,212,0.15)] hover:-translate-y-1 select-none cursor-pointer relative flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-start justify-between gap-3 mb-3">
@@ -244,6 +248,9 @@ export default function Projects({ audioSynth }) {
               </div>
             );
           })}
+
+          {/* Trailing End Spacer to prevent last card edge clipping */}
+          <div className="w-2 sm:w-6 shrink-0 pointer-events-none" aria-hidden="true" />
         </div>
       </div>
 
