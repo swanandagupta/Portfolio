@@ -429,26 +429,47 @@ export const RESEARCH_INTERESTS = [
 
 export const ACHIEVEMENTS = [
   {
+    title: "Won Hackathon: AniGaMathon",
+    description:
+      "Built an interactive game making chemistry chemical reactions interactive and learnable easily for young students focusing on seamless UI/UX design and smooth effects for a comfortable, fun user experience. This got us CSIR internship further giving us the opportunity to continue working for a good cause.",
+    images: [
+      "images/AniGaMathon/106200.jpg",
+      "images/AniGaMathon/106203.jpg",
+    ],
+  },
+  {
     title: "Samsung Solve for Tomorrow - Top 40",
     description:
       "Developed an AI-powered rehabilitation platform integrating computer vision, real-time vitals monitoring, and haptic feedback.",
+    images: [
+      "images/Samsung Solve for tomorrow/106191.jpg",
+      "images/Samsung Solve for tomorrow/106192.jpg",
+      "images/Samsung Solve for tomorrow/106193.jpg",
+    ],
   },
   {
     title: "Taylor & Francis Publication",
     description:
       "Published research on a hybrid quantum-classical model for wheat harvest classification, reaching 99.88% accuracy.",
+    images: ["images/Taylor and Francis/Screenshot 2026-08-11 111954.png"],
   },
   {
     title: "WebSphere Hackathon - 3rd Place",
     description: "Built a disaster-management platform under hackathon time constraints.",
+    images: ["images/Websphere/106286.jpg"],
   },
   {
     title: "Student Coordinator, Hack4Health",
     description: "Organized a campus-wide hackathon with 400+ participants.",
+    images: [
+      "images/Hack4Health/106206.jpg",
+      "images/Hack4Health/106211.jpg",
+    ],
   },
   {
     title: "Technical Seminar Speaker",
     description: "Presented a technical seminar on fog orchestration.",
+    images: ["images/Technical Speaker/106194.jpg"],
   },
 ];
 

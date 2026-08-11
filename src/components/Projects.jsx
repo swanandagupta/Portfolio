@@ -151,8 +151,8 @@ export default function Projects({ audioSynth }) {
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <SectionHeader
           eyebrow="Panel // 04"
-          title="Engineering Case Studies"
-          description="Use your mouse wheel or swipe horizontally to explore projects — click any card for architecture & implementation."
+          title="Projects"
+          description="Passionate about solving real-world problems by deeply understanding their underlying challenges and developing detailed, practical solutions."
           color="#A78BFA"
         />
 
@@ -202,12 +202,12 @@ export default function Projects({ audioSynth }) {
                 className="snap-start group/card block w-[82vw] sm:w-[calc(50vw-2.5rem)] lg:w-[calc(33.333vw-2.5rem)] xl:w-[calc(25vw-2.5rem)] min-w-[270px] max-w-[370px] shrink-0 bg-panel/85 backdrop-blur-xl border border-line/80 rounded-2xl p-6 transition-all duration-300 hover:border-cyan/60 hover:shadow-[0_12px_30px_rgba(94,234,212,0.15)] hover:-translate-y-1 select-none cursor-pointer relative flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                     <h3 className="font-display font-bold text-lg text-ink group-hover/card:text-cyan transition-colors">
                       {p.title}
                     </h3>
                     <span
-                      className="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded border shrink-0 font-semibold"
+                      className="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded border font-semibold max-w-full truncate shrink-0"
                       style={{ backgroundColor: d.color + "18", borderColor: d.color + "44", color: d.color }}
                     >
                       {p.category}
