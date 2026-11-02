@@ -22,11 +22,11 @@ export const PROFILE = {
 
 // The five foliage clusters of the knowledge tree in the About section.
 export const KNOWLEDGE_TREE = [
-  { id: "ai", title: "AI & Machine Learning", items: ["Quantum ML", "Computer Vision", "LLMs", "AI Agents"] },
+  { id: "ai", title: "AI & Machine Learning", items: ["Quantum ML", "Computer Vision", "LLMs", "AI Agents", "Human-Centered AI"] },
   { id: "software", title: "Software Engineering", items: ["Full-Stack Development", "React", "ASP.NET Core", "APIs"] },
   { id: "security", title: "Cybersecurity", items: ["SIEM", "Threat Detection", "MITRE ATT&CK", "Incident Response"] },
   { id: "data", title: "Data Engineering & Analytics", items: ["Data Pipelines", "Telemetry", "Analytics"] },
-  { id: "research", title: "Applied Research", items: ["EEG Biometrics", "Digital Twins", "Quantum Computing"] },
+  { id: "research", title: "Applied Research", items: ["EEG Biometrics", "Digital Twins", "Quantum Computing", "Smart Cities", "IoT"] },
 ];
 
 export const COMPETENCIES = [
@@ -314,19 +314,6 @@ export const SKILLS = [
     label: "Tools & Platforms",
     items: ["Git", "IBM QRadar"],
   },
-];
-
-export const RESEARCH_INTERESTS = [
-  "Artificial Intelligence",
-  "Quantum Machine Learning",
-  "EEG Biometrics",
-  "Cybersecurity",
-  "Agentic AI",
-  "Digital Twins",
-  "Smart Cities",
-  "Computer Vision",
-  "IoT",
-  "Human-Centered AI",
 ];
 
 export const ACHIEVEMENTS = [

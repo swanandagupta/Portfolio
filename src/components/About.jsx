@@ -1,4 +1,4 @@
-import { PROFILE, RESEARCH_INTERESTS } from "../data/content";
+import { PROFILE } from "../data/content";
 import KnowledgeTree from "./KnowledgeTree";
 
 export default function About() {
@@ -15,14 +15,6 @@ export default function About() {
           <div className="about__copy" data-reveal>
             <p>{PROFILE.bio}</p>
             <p>{PROFILE.bio2}</p>
-          </div>
-          <div className="interests" data-reveal>
-            <p className="eyebrow">Research interests</p>
-            <ul className="chips">
-              {RESEARCH_INTERESTS.map((r) => (
-                <li key={r}>{r}</li>
-              ))}
-            </ul>
           </div>
         </div>
         <KnowledgeTree />
