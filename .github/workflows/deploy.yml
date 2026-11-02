@@ -35,6 +35,8 @@ jobs:
 
       - name: Build Application
         run: npm run build
+        env:
+          VITE_FORMSPREE_ID: ${{ vars.FORMSPREE_ID }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

@@ -8,14 +8,26 @@ export const DOMAIN = {
 export const PROFILE = {
   name: "Swananda Gupta",
   tagline: "Reading signals, from brainwaves to network traffic, and building the systems that act on them.",
+  positioning: "Computer Science student working across AI, software engineering and cybersecurity.",
   affiliation: "CSE Undergraduate, VIT Chennai",
   focus: ["AI / ML", "Cybersecurity", "Quantum ML", "Full-Stack"],
-  bio: "I'm a Computer Science and Engineering undergraduate at VIT Chennai, working across AI-driven applications, quantum machine learning, digital twins, IoT systems, and enterprise software. I like taking research out of the lab and into something that runs, instrumenting systems, reading the signals they produce, and closing the loop between analysis and action.",
+  bio: "I'm a Computer Science and Engineering undergraduate at VIT Chennai, working across machine learning, cybersecurity, software development and applied research.",
+  bio2: "I enjoy building practical systems that connect data, models and applications — from intelligent software to research-driven engineering.",
+  email: "swanandagupta@gmail.com",
   links: {
     linkedin: "https://www.linkedin.com/in/swananda-gupta-107a36323/",
     github: "https://github.com/swanandagupta",
   },
 };
+
+// The five foliage clusters of the knowledge tree in the About section.
+export const KNOWLEDGE_TREE = [
+  { id: "ai", title: "AI & Machine Learning", items: ["Quantum ML", "Computer Vision", "LLMs", "AI Agents"] },
+  { id: "software", title: "Software Engineering", items: ["Full-Stack Development", "React", "ASP.NET Core", "APIs"] },
+  { id: "security", title: "Cybersecurity", items: ["SIEM", "Threat Detection", "MITRE ATT&CK", "Incident Response"] },
+  { id: "data", title: "Data Engineering & Analytics", items: ["Data Pipelines", "Telemetry", "Analytics"] },
+  { id: "research", title: "Applied Research", items: ["EEG Biometrics", "Digital Twins", "Quantum Computing"] },
+];
 
 export const COMPETENCIES = [
   "Artificial Intelligence",
@@ -35,7 +47,7 @@ export const COMPETENCIES = [
 export const EXPERIENCE = [
   {
     domain: "research",
-    role: "Research Intern",
+    role: "Research & Development Intern",
     org: "Vellore Institute of Technology",
     period: "2026 - Present",
     summary:
@@ -46,7 +58,7 @@ export const EXPERIENCE = [
       "Compared classical manifold learning against quantum-enhanced classification to improve the robustness of EEG biometric authentication.",
     ],
     tags: ["EEG Biometrics", "Riemannian Geometry", "Variational Quantum Classifier", "Cognitive Fingerprinting"],
-    certificate: null,
+    certificate: "vit-research",
   },
   {
     domain: "security",
@@ -104,26 +116,6 @@ export const PROJECTS = [
     impact: "Real-Time Journey Monitoring & Risk AI",
     motivation:
       "Women often rely on reactive safety solutions that trigger after an incident occurs. Existing navigation apps lack contextual risk prediction, historical crime modeling, and intelligent safety route planning. STREEVA predicts unsafe situations before they occur using AI and Digital Twin technology.",
-    papers: [
-      {
-        title: "SafeRoute: Learning to Recommend Safe Urban Paths",
-        authors: "Z. Chen, H. Wang, et al.",
-        year: "2023",
-        contribution: "Deep reinforcement learning framework for multi-criterion urban routing optimizing distance and safety scores.",
-      },
-      {
-        title: "Crime Prediction using Spatio-Temporal Deep Learning",
-        authors: "M. R. Santos, A. Kumar",
-        year: "2024",
-        contribution: "Spatial-temporal graph neural network predicting localized micro-crime risk probabilities.",
-      },
-      {
-        title: "Digital Twin Frameworks for Smart Cities: A Survey",
-        authors: "K. Lin, S. Zhang, et al.",
-        year: "2022",
-        contribution: "Comprehensive taxonomy on fusing real-time IoT feeds with urban geospatial digital twins.",
-      },
-    ],
     implementation: [
       "Crime data preprocessing & spatial aggregation across city grid blocks.",
       "Road network graph generation with real-time edge weight assignment.",
@@ -143,6 +135,7 @@ export const PROJECTS = [
     },
     architectureMarkdown: "architectures/streeva.md",
     architectureImage: "images/streeva_architecture.png",
+    architectureSize: [1831, 825],
     github: "https://github.com/swanandagupta/streeva",
   },
   {
@@ -153,26 +146,6 @@ export const PROJECTS = [
     impact: "Hyperlocal Drone AQI Telemetry & Heatmapping",
     motivation:
       "Traditional ground AQI stations provide sparse, macro-level measurements that miss localized pollution spikes. Air quality varies drastically across neighborhood streets, industrial zones, and micro-climates. AirIQ enables autonomous drone-based spatial pollution mapping with real-time multi-gas sensor payloads.",
-    papers: [
-      {
-        title: "Drone-Based Air Pollution Monitoring Systems: Architecture & Field Deployment",
-        authors: "R. Patel, J. Vance, et al.",
-        year: "2023",
-        contribution: "Low-latency UAV payload design for targeted spatial AQI telemetry collection.",
-      },
-      {
-        title: "IoT Environmental Monitoring & Calibration using ESP32",
-        authors: "A. Gupta, M. Sharma",
-        year: "2024",
-        contribution: "Cross-sensitivity calibration algorithms for electrochemical gas sensors on microcontrollers.",
-      },
-      {
-        title: "UAV-Assisted High-Resolution Urban Air Quality Mapping",
-        authors: "L. Zhao, Y. Liu, et al.",
-        year: "2022",
-        contribution: "Gaussian process regression models for spatial interpolation of UAV sensor logs.",
-      },
-    ],
     implementation: [
       "ESP32-S3 microcontroller firmware with multi-threaded sensor polling.",
       "MQ135 (Air Quality) & MQ137 (Ammonia) gas sensor array integration.",
@@ -192,6 +165,7 @@ export const PROJECTS = [
     },
     architectureMarkdown: "architectures/airiq.md",
     architectureImage: "images/airiq_architecture.png",
+    architectureSize: [564, 1335],
     github: "https://github.com/swanandagupta/environmental-monitoring",
   },
   {
@@ -202,26 +176,6 @@ export const PROJECTS = [
     impact: "Automated MITRE Mapping & Incident Triage",
     motivation:
       "Security Operations Center (SOC) analysts are overwhelmed by high log volume and alert fatigue. Manual correlation of SIEM alerts, network telemetry, and endpoint logs delays critical threat containment. SOC Copilot accelerates investigation turnarounds using LLM agents mapped directly to MITRE ATT&CK.",
-    papers: [
-      {
-        title: "LLM-Assisted Security Operations: Automating Incident Triage & Response",
-        authors: "T. Miller, S. Rajan, et al.",
-        year: "2024",
-        contribution: "Evaluates LLM reasoning capabilities on SIEM log streams and automated playbook execution.",
-      },
-      {
-        title: "MITRE ATT&CK Knowledge Graphs for Automated Threat Correlation",
-        authors: "E. Vance, C. Wu",
-        year: "2023",
-        contribution: "Graph neural network mapping raw IOC telemetry to MITRE tactics, techniques, and procedures.",
-      },
-      {
-        title: "AI for Automated Security Incident Response: A Benchmark Study",
-        authors: "H. Al-Mansoori, D. Brooks",
-        year: "2023",
-        contribution: "Framework for evaluating agentic security copilots on synthetic enterprise breach datasets.",
-      },
-    ],
     implementation: [
       "Multi-source Log Ingestion Engine supporting IBM QRadar SIEM, Syslog, and PCAP feeds.",
       "Data Normalization Pipeline mapping raw events to Common Event Format (CEF).",
@@ -240,6 +194,7 @@ export const PROJECTS = [
     },
     architectureMarkdown: "architectures/soc.md",
     architectureImage: "images/soc_architecture.png",
+    architectureSize: [958, 1170],
     github: "https://github.com/swanandagupta/soc-copilot",
   },
   {
@@ -250,26 +205,6 @@ export const PROJECTS = [
     impact: "98.7% Cross-Paradigm Quantum EEG Biometrics",
     motivation:
       "Password and static biometric authentication systems are vulnerable to replay, spoofing, and credential leakage. Continuous brainwave (EEG) biometrics offer un-forgeable identity protection but suffer from cross-session noise and cognitive state variations. This project introduces a Riemannian Manifold and Variational Quantum Classifier framework for disentangled EEG identity verification.",
-    papers: [
-      {
-        title: "Identity-State Disentanglement for EEG Biometrics: A Riemannian Approach",
-        authors: "S. Gupta, A. Raman, et al.",
-        year: "2026",
-        contribution: "Novel disentanglement architecture isolating permanent identity features from transient cognitive states.",
-      },
-      {
-        title: "Variational Quantum Classifiers for High-Dimensional Biomedical Signals",
-        authors: "M. Schulze, E. Fischer",
-        year: "2025",
-        contribution: "Demonstrates quantum advantage in noise-resilient classification of covariance matrices.",
-      },
-      {
-        title: "EEG-Based Cognitive Fingerprinting: A Comprehensive Survey",
-        authors: "J. Kim, T. Nguyen",
-        year: "2024",
-        contribution: "Review of manifold geometry, ICA filtering, and deep learning models for EEG biometrics.",
-      },
-    ],
     implementation: [
       "Multi-channel EEG signal preprocessing & bandpass filtering (0.5Hz – 50Hz).",
       "Independent Component Analysis (ICA) artifact & eye-blink removal.",
@@ -287,6 +222,7 @@ export const PROJECTS = [
     },
     architectureMarkdown: "architectures/eeg.md",
     architectureImage: "images/eeg_architecture.png",
+    architectureSize: [641, 1614],
     github: "https://github.com/swanandagupta/eeg-biometrics",
   },
   {
@@ -297,26 +233,6 @@ export const PROJECTS = [
     impact: "Samsung SFT Top 40 · 3D Skeleton Pose Feedback",
     motivation:
       "Physical therapy patients performing exercises at home often suffer from undetected posture errors and improper form. Clinic visits are expensive and lack continuous, quantitative movement tracking between sessions. Built for Samsung Solve for Tomorrow (Top 40 National Finalist), this system delivers real-time computer vision pose feedback and smartwatch vitals tracking.",
-    papers: [
-      {
-        title: "AI-Driven 3D Pose Estimation for Home Physiotherapy Rehabilitation",
-        authors: "D. Mehta, K. Patel, et al.",
-        year: "2024",
-        contribution: "Real-time joint angle vector calculation using lightweight mobile pose estimation networks.",
-      },
-      {
-        title: "Human Pose Estimation & Motion Analysis using MediaPipe",
-        authors: "C. Lugaresi, J. Tang, et al.",
-        year: "2023",
-        contribution: "High-speed 33-landmark pose tracking pipeline running on edge hardware.",
-      },
-      {
-        title: "Deep Learning in Physical Rehabilitation: Feedback Systems & Clinical Validation",
-        authors: "R. Ferguson, S. Taylor",
-        year: "2023",
-        contribution: "Clinical trial validating automated repetition counting and joint deviation scoring.",
-      },
-    ],
     implementation: [
       "High-fps webcam & camera frame ingestion pipeline.",
       "MediaPipe 33-landmark 3D skeleton keypoint detection.",
@@ -335,6 +251,7 @@ export const PROJECTS = [
     },
     architectureMarkdown: "architectures/rehab.md",
     architectureImage: "images/rehab_architecture.png",
+    architectureSize: [414, 1551],
     github: "https://github.com/swanandagupta/ai-rehab-system",
   },
   {
@@ -345,26 +262,6 @@ export const PROJECTS = [
     impact: "92.4% Detection Accuracy on CICIDS 2019",
     motivation:
       "Legacy signature-based Intrusion Detection Systems (IDS) fail against zero-day attacks and polymorphic network exploits. Enterprise networks produce high-throughput packet flows that require real-time, low-latency threat classification. SecureSphere provides a high-accuracy machine learning IDS trained on the CICIDS 2019 benchmark dataset.",
-    papers: [
-      {
-        title: "Benchmarking Machine Learning Models on the CICIDS 2019 Dataset",
-        authors: "I. Sharafaldin, A. H. Lashkari, et al.",
-        year: "2023",
-        contribution: "Establishes baseline evaluation metrics for ML classifiers on multi-vector DDoS and botnet attacks.",
-      },
-      {
-        title: "Real-Time Network Intrusion Detection using Random Forest & XGBoost",
-        authors: "N. Sultana, N. Chilamkurti",
-        year: "2024",
-        contribution: "Feature reduction pipeline reducing 80 network flow features to 15 key discriminators.",
-      },
-      {
-        title: "Explainable AI (XAI) for Network Security Incident Analysis",
-        authors: "P. Mishra, V. Varadharajan",
-        year: "2023",
-        contribution: "SHAP and LIME integration explaining feature importance in IDS classification decisions.",
-      },
-    ],
     implementation: [
       "PCAP & NetFlow raw packet capture & stream parser.",
       "Feature Engineering pipeline extracting 80 statistical flow features.",
@@ -383,6 +280,7 @@ export const PROJECTS = [
     },
     architectureMarkdown: "architectures/securesphere.md",
     architectureImage: "images/securesphere_architecture.png",
+    architectureSize: [1031, 1225],
     github: "https://github.com/swanandagupta/securesphere",
   },
 ];
@@ -410,7 +308,11 @@ export const SKILLS = [
   },
   {
     label: "Cloud & Development",
-    items: ["AWS", "Git", "REST APIs", "FastAPI", "Node.js"],
+    items: ["AWS", "REST APIs", "FastAPI", "Node.js"],
+  },
+  {
+    label: "Tools & Platforms",
+    items: ["Git", "IBM QRadar"],
   },
 ];
 
@@ -433,8 +335,8 @@ export const ACHIEVEMENTS = [
     description:
       "Built an interactive game making chemistry chemical reactions interactive and learnable easily for young students focusing on seamless UI/UX design and smooth effects for a comfortable, fun user experience. This got us CSIR internship further giving us the opportunity to continue working for a good cause.",
     images: [
-      "images/AniGaMathon/106200.jpg",
-      "images/AniGaMathon/106203.jpg",
+      { src: "images/AniGaMathon/106200.webp", w: 1080, h: 832 },
+      { src: "images/AniGaMathon/106203.webp", w: 1050, h: 1400 },
     ],
   },
   {
@@ -442,34 +344,76 @@ export const ACHIEVEMENTS = [
     description:
       "Developed an AI-powered rehabilitation platform integrating computer vision, real-time vitals monitoring, and haptic feedback.",
     images: [
-      "images/Samsung Solve for tomorrow/106191.jpg",
-      "images/Samsung Solve for tomorrow/106192.jpg",
-      "images/Samsung Solve for tomorrow/106193.jpg",
+      { src: "images/Samsung Solve for tomorrow/106191.webp", w: 1400, h: 953 },
+      { src: "images/Samsung Solve for tomorrow/106192.webp", w: 1400, h: 1190 },
+      { src: "images/Samsung Solve for tomorrow/106193.webp", w: 1400, h: 970 },
     ],
   },
   {
     title: "Taylor & Francis Publication",
     description:
       "Published research on a hybrid quantum-classical model for wheat harvest classification, reaching 99.88% accuracy.",
-    images: ["images/Taylor and Francis/Screenshot 2026-08-11 111954.png"],
+    images: [{ src: "images/Taylor and Francis/Screenshot 2026-08-11 111954.webp", w: 1400, h: 1206 }],
   },
   {
     title: "WebSphere Hackathon - 3rd Place",
     description: "Built a disaster-management platform under hackathon time constraints.",
-    images: ["images/Websphere/106286.jpg"],
+    images: [{ src: "images/Websphere/106286.webp", w: 721, h: 1280 }],
   },
   {
     title: "Student Coordinator, Hack4Health",
     description: "Organized a campus-wide hackathon with 400+ participants.",
     images: [
-      "images/Hack4Health/106206.jpg",
-      "images/Hack4Health/106211.jpg",
+      { src: "images/Hack4Health/106206.webp", w: 1043, h: 780 },
+      { src: "images/Hack4Health/106211.webp", w: 1080, h: 874 },
     ],
   },
   {
     title: "Technical Seminar Speaker",
     description: "Presented a technical seminar on fog orchestration.",
-    images: ["images/Technical Speaker/106194.jpg"],
+    images: [{ src: "images/Technical Speaker/106194.webp", w: 1400, h: 845 }],
+  },
+];
+
+export const CERTIFICATES = [
+  {
+    title: "Summer Research Internship 2026",
+    issuer: "VIT Chennai, Centre for Neuroinformatics (CNI)",
+    note: "Manifold-Aware Identity-State Disentanglement for Cross-Paradigm EEG Authentication",
+    src: "images/certificates/vit-research.webp",
+    w: 2000,
+    h: 1379,
+    ref: "vit-research",
+  },
+  {
+    title: "CSIR-NCL Internship Completion",
+    issuer: "CSIR-National Chemical Laboratory, Pune",
+    note: "Snowbound: Rebuild Their World, an interactive educational game",
+    src: "images/certificates/csir.webp",
+    w: 1075,
+    h: 753,
+    ref: "certificate/CSIR.pdf",
+    pdf: "certificate/CSIR.pdf",
+  },
+  {
+    title: "L&T Energy Hydrocarbon Internship",
+    issuer: "Larsen & Toubro, Information Technology Dept.",
+    note: "User Manual Creation Web Application using ASP.NET",
+    src: "images/certificates/lt.webp",
+    w: 911,
+    h: 1358,
+    ref: "certificate/L&T.pdf",
+    pdf: "certificate/L&T.pdf",
+  },
+  {
+    title: "L&T Technology Services Internship",
+    issuer: "L&T Technology Services Limited, Mumbai",
+    note: "Internship certificate",
+    src: "images/certificates/maharashtra-cyber.webp",
+    w: 868,
+    h: 1176,
+    ref: "certificate/Maharashtra Cyber.pdf",
+    pdf: "certificate/Maharashtra Cyber.pdf",
   },
 ];
 
@@ -477,8 +421,7 @@ export const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Research", href: "#research" },
-  { label: "Skills", href: "#skills" },
-  { label: "Achievements", href: "#achievements" },
+  { label: "Toolkit", href: "#skills" },
+  { label: "Recognition", href: "#recognition" },
   { label: "Contact", href: "#contact" },
 ];
