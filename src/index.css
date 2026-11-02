@@ -2214,12 +2214,12 @@ body.menu-open .cat-layer {
 /* ───────── About: text left, tree right (desktop only) ───────── */
 @media (min-width: 1000px) {
   .about {
-    grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1.28fr);
+    grid-template-columns: minmax(290px, 0.56fr) minmax(0, 1.44fr);
     align-items: center;
     gap: clamp(32px, 5vw, 80px);
   }
   .about .section__head h2 {
-    font-size: clamp(2.2rem, 1.2rem + 3.2vw, 4rem);
+    font-size: clamp(2.2rem, 1.2rem + 2.8vw, 3.6rem);
   }
   .about__copy {
     margin-bottom: clamp(24px, 3vw, 40px);

@@ -32,6 +32,7 @@ export default function Skills() {
   const shapes = useRef({});
   const [W, setW] = useState(0);
   const [open, setOpen] = useState(null);
+  const [pinned, setPinned] = useState(false); // opened by click/tap/keyboard: stays open until toggled off
 
   useLayoutEffect(() => {
     const el = hangRef.current;
@@ -54,6 +55,7 @@ export default function Skills() {
     if (e.key === "Escape" && open !== null) {
       const id = open;
       setOpen(null);
+      setPinned(false);
       shapes.current[id]?.querySelector("button")?.focus();
     }
   };
@@ -98,6 +100,12 @@ export default function Skills() {
                       ref={(el) => (shapes.current[i] = el)}
                       className="orb__shape"
                       style={{ left: isOpen ? openLeft : -D / 2, top: it.L, width: size, height: size }}
+                      onPointerEnter={(e) => {
+                        if (e.pointerType === "mouse" && !pinned) setOpen(i);
+                      }}
+                      onPointerLeave={(e) => {
+                        if (e.pointerType === "mouse" && !pinned) setOpen((cur) => (cur === i ? null : cur));
+                      }}
                     >
                       <span className="orb__glow" aria-hidden="true" />
                       <span className="orb__name">{g.label}</span>
@@ -112,7 +120,15 @@ export default function Skills() {
                         aria-expanded={isOpen}
                         aria-controls={listId}
                         aria-label={`${g.label}, ${g.items.length} skills`}
-                        onClick={() => setOpen(isOpen ? null : i)}
+                        onClick={() => {
+                          if (isOpen && pinned) {
+                            setOpen(null);
+                            setPinned(false);
+                          } else {
+                            setOpen(i);
+                            setPinned(true);
+                          }
+                        }}
                       />
                     </div>
                   </div>
