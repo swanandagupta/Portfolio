@@ -83,7 +83,9 @@ function Cluster({ data, tone, cx, cy, rx, ry, seed, titleSize, itemSize, titleM
 }
 
 const WIDE = {
-  box: [1000, 700],
+  box: [1024, 750],
+  vbX: -12,
+  vbY: -34,
   clusters: [
     [215, 190, 172, 112],
     [505, 120, 190, 112],
@@ -103,12 +105,13 @@ const WIDE = {
     ["M492 595 C450 560 380 520 322 480", 18],
     ["M512 595 C570 560 650 520 706 485", 18],
   ],
-  fonts: [25, 15.5, 16, 26],
+  fonts: [29, 18, 16, 26],
   maxW: 1100,
 };
 const NARROW = {
-  box: [384, 610],
+  box: [384, 628],
   vbX: -12,
+  vbY: -18,
   clusters: [
     [96, 95, 94, 80],
     [264, 95, 94, 80],
@@ -150,7 +153,7 @@ export default function KnowledgeTree() {
 
   return (
     <figure className="tree" style={{ maxWidth: L.maxW }} data-reveal>
-      <svg viewBox={`${L.vbX ?? 0} 0 ${L.box[0]} ${L.box[1]}`} role="img" aria-label={label} className="tree__svg">
+      <svg viewBox={`${L.vbX ?? 0} ${L.vbY ?? 0} ${L.box[0]} ${L.box[1]}`} role="img" aria-label={label} className="tree__svg">
         {L.branches.map(([d, w], i) => (
           <g key={i} fill="none" strokeLinecap="round">
             <path d={d} stroke={TAN_LINE} strokeWidth={w + 6} />

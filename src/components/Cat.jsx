@@ -196,7 +196,8 @@ export default function Cat() {
         let x = last.right + 16;
         const need = h * GROUND + font * 0.2;
         if (need > last.height * 0.95 && prevRight > x - 4) x = prevRight + 16;
-        if (x + w + 8 <= vw) return { x, y: fromGround(last.bottom + scrollY - dy - font * 0.2) };
+        const limit = head.closest(".about__left")?.getBoundingClientRect().right ?? vw;
+        if (x + w + 8 <= Math.min(vw, limit)) return { x, y: fromGround(last.bottom + scrollY - dy - font * 0.2) };
       }
       const eyebrow = head.querySelector(".eyebrow");
       const hr = docPos(head.getBoundingClientRect(), dy);
